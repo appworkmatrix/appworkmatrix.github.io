@@ -2,3 +2,9 @@
 /node_modules/
 /nbproject/private/
 /nbproject/
+
+/vendor/
+Homestead.yaml
+Vagrantfile
+composer.lock
+.vagrant

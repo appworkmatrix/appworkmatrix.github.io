@@ -1,0 +1,249 @@
+@import "build";
+body {
+    position: relative;
+}
+/* General */
+#awm-site {
+    .btn {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .awm-logo {
+        width: 25px;
+        position: relative;
+        margin-top: -3px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+/* Header */
+.navbar.navbar-awm {
+    min-height: 70px;
+    border-color: transparent !important;
+    background-color: transparent !important;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+
+    &.navbar-default {
+        background-color: #fefefe;
+    }
+
+    .navbar-header {
+
+        .navbar-brand {
+            height: 70px;
+            font-family: 'Open Sans Condensed', serif;
+            font-weight: 700;
+            font-size: 1.75em;
+            line-height: 40px;
+            -webkit-transition: color 400ms;
+            transition: color 400ms;
+        }
+        
+    }
+    .navbar-nav {
+        li {
+            a {
+                line-height: 40px;
+                -webkit-transition: color 400ms;
+                transition: color 400ms;
+                color: #fff;
+
+                &:hover, &:focus {
+                    color: #052a33;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+.navbar.navbar-awm-inverse {
+    background-color: #fafafa !important;
+    border-color: #e7e7e7 !important;
+
+    .navbar-header {
+
+        .navbar-brand {
+            color: $awmGlobalColor;
+        }
+    }
+    .navbar-nav {
+        li {
+            a {
+                color: #777;
+
+                &:hover, &:focus {
+                    color: $awmGlobalColor;
+                }
+            }
+        }
+    }
+}
+.navbar-default {
+    .navbar-brand {
+        color: #fff;
+
+        &:hover,&:focus {
+            @extend .navbar-brand;
+        }
+    }
+}
+.site-header-wrapper {
+    @include bgImg('../../resources/img/header-abstract-bg.png', null, contain, true, repeat, $awmGlobalColor);
+    border-bottom: 1px solid #efefef;
+
+    .site-header {
+        position: relative;
+        margin-top: -21px;
+        min-height: 560px;
+        width: 100%;
+        @include pad(60px,0,60px,0);
+
+        .hero {
+            margin-top: 150px;
+            color: #fff;
+
+            h1 {
+                font-size: 4em;
+            }
+        }
+    }
+}
+#site-main {
+
+    section {
+
+        .section-title {
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            
+            &:after {
+                content: "________";
+                display: block;
+                font-style: bold;
+                font-size: 16px;
+            }
+
+            small {
+                font-family: serif;
+                font-style: italic;
+                font-size: .6em;
+                text-transform: initial;
+            }
+        }
+    }
+}
+/* Footer */
+.site-footer-wrapper {
+    background-color: #f6f6f6;
+    border-top: 1px solid #eaeaea;
+    @include pad(20px,0,40px,0);
+}
+
+/* Sections */
+section#awm-portfolio {
+    @include pad(20px,0,60px,0);
+    @include bgImg('../../resources/img/transparent-square-tiles.png', null, null, true, repeat, #fafafa);
+    border-bottom: 1px solid #eaeaea;
+}
+
+section#awm-services {
+    @include pad(20px,0,60px,0);
+
+    .service-item {
+        h3 {
+            text-align: center;
+        }
+        .fa {
+            color: #a5a5a5;
+
+            &.fa-circle-o {
+                color: $awmGlobalColor;
+            }
+        }
+    }
+}
+
+section#awm-call-to-action {
+    background-color: #052a33;
+    @include pad(40px,0,25px,0);
+}
+
+section#awm-testimonials {
+    @include pad(40px,0,60px,0);
+
+    blockquote {
+        @include pad(20px,40px,20px,40px);
+
+        img.client-photo {
+            width: 48px;
+            margin-right: 10px;
+        }
+    }
+}
+
+/* Masonry Grid */
+.portfolio-grid {
+    overflow: hidden;
+
+    .portfolio-grid-item {
+        overflow: hidden;
+        margin-bottom: 10px;
+        @include pad(0,5px,0,5px);
+
+        .portfolio-grid-content {
+            overflow: hidden;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+                -ms-transition: all 0.3s linear;
+                -o-transition: all 0.3s linear;
+                    transition: all 0.3s linear;
+            
+            &:hover {
+                cursor: pointer;
+                img {
+                    -webkit-filter: brightness(100%);
+                    filter: brightness(100%);
+                    // transform: scale(1.125, 1.125);
+                    // -ms-transform: scale(1.125, 1.125);
+                    // -webkit-transform: scale(1.125, 1.125);
+                }
+                .caption {
+                    h4 {
+                        display: block;
+                    }
+                }
+            }
+            img {
+                -webkit-filter: brightness(75%);
+                filter: brightness(75%);
+                -webkit-transition: all 0.3s linear;
+                -moz-transition: all 0.3s linear;
+                    -ms-transition: all 0.3s linear;
+                    -o-transition: all 0.3s linear;
+                        transition: all 0.3s linear;
+            }
+        }
+
+        .caption {
+
+            h4 {
+                float: right;
+                position: relative;
+                top: -49px;
+                font-weight: 400;
+                display: none;
+                background-color: #fff;
+                @include pad(10px,10px,10px,10px);
+                -webkit-transition: display 0.3s linear;
+                -moz-transition: display 0.3s linear;
+                    -ms-transition: display 0.3s linear;
+                    -o-transition: display 0.3s linear;
+                        transition: display 0.3s linear;
+            }
+        }
+    }
+}

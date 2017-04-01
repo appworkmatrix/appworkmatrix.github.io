@@ -1,0 +1,9 @@
+{
+    "name": "pingol/appworkmatrix.github.io",
+    "description": "Appworkmatrix",
+    "type": "project",
+    "require": {
+        "laravel/homestead": "^3.0"
+    },
+    "minimum-stability": "dev"
+}

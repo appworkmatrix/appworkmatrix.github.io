@@ -28,6 +28,7 @@
   "homepage": "https://github.com/appworkmatrix/appworkmatrix.github.io#readme",
   "devDependencies": {
     "gulp-clean-css": "^3.0.4",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.5.0",
     "gulp-uglify": "^2.1.2"
   }

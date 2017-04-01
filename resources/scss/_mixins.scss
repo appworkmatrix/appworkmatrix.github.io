@@ -1,0 +1,56 @@
+
+@mixin fontFace($name, $path, $weight: null, $style: null, $exts: eot ttf) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+@mixin bgImg($url, $position, $size, $is_repeat, $repeat_pos: null, $color: null) {
+    
+    $repeat: no-repeat;
+
+    @if $is_repeat == true && $is_repeat != null {
+        $repeat: $repeat_pos;
+    }
+
+    background-image: url(quote($url));
+    background-repeat: $repeat;
+    @if $position != null {
+    background-position: $position;
+    }
+    @if $size != null {
+    background-size: $size;
+    }
+
+    @if $color != null {
+        background-color: $color;
+    }
+}
+
+@mixin pad($top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
