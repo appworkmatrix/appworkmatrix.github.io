@@ -1,0 +1,34 @@
+{
+  "name": "appworkmatrix.github.io",
+  "version": "1.0.0",
+  "description": "Appworkmatrix Business Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appworkmatrix/appworkmatrix.github.io.git"
+  },
+  "keywords": [
+    "Appworkmatrix",
+    "web",
+    "development",
+    "web",
+    "application",
+    "website",
+    "create",
+    "website"
+  ],
+  "author": "Appworkmatrix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/appworkmatrix/appworkmatrix.github.io/issues"
+  },
+  "homepage": "https://github.com/appworkmatrix/appworkmatrix.github.io#readme",
+  "devDependencies": {
+    "gulp-clean-css": "^3.0.4",
+    "gulp-sourcemaps": "^2.5.0",
+    "gulp-uglify": "^2.1.2"
+  }
+}
