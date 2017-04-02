@@ -35,11 +35,12 @@
                 var $_form = $(this);
                 
                 $.ajax({
+                    url: "https://formspree.io/appworkmatrix@gmail.com",
                     type: "POST",
                     data: $_form.serializeArray(),
-                    url: "app/functions/Email.php",
+                    dataType: 'json',
                     success: function(o) {
-                        console.log(o);
+                        window.location.replace(o.next);
                     },
                     error: function(e) {
                         console.log(e);
