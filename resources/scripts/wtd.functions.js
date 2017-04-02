@@ -26,11 +26,32 @@
         },
         scrollSpy: function(e) {
             return $('body').scrollspy({ target: e });
+        },
+        formSendEmail: function(form) {
+            $(form).submit(function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                var $_form = $(this);
+                
+                $.ajax({
+                    type: "POST",
+                    data: $_form.serializeArray(),
+                    url: "app/functions/Email.php",
+                    success: function(o) {
+                        console.log(o);
+                    },
+                    error: function(e) {
+                        console.log(e);
+                    }
+                });
+            });
         }
     };
 
 //    fn.awmMasonry(".grid", ".portfolio-grid-item");
-    fn.navTransformOnScroll(".navbar-awm");
 //    fn.scrollSpy("#awm-navbar");
+    fn.navTransformOnScroll(".navbar-awm");
+    fn.formSendEmail("form#contact-awm");
 
 }(jQuery, window, document))

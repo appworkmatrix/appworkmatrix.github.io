@@ -3,7 +3,8 @@
     "description": "Appworkmatrix",
     "type": "project",
     "require": {
-        "laravel/homestead": "^3.0"
+        "laravel/homestead": "^3.0",
+        "sendgrid/sendgrid": "~5.1"
     },
     "minimum-stability": "dev"
 }
